@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Password</title>
+</head>
+<body>
+
+<h2>Are you sure you want to delete: {{ password.name }}?</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+</form>
+
+</body>
+</html>

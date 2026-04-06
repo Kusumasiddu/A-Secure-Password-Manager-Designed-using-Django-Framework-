@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Password Storage!</h1>
+    <p class="lead">This is your secure place to store passwords.</p>
+    <hr class="my-4">
+    {% if user.is_authenticated %}
+        <a class="btn btn-primary btn-lg" href="{% url 'password-list' %}" role="button">Manage Passwords</a>
+    {% else %}
+        <a class="btn btn-primary btn-lg" href="{% url 'register-page' %}" role="button">Register</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'login-page' %}" role="button">Login</a>
+    {% endif %}
+</div>
+{% endblock %}
